@@ -5,7 +5,7 @@
 .overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;text-align:center;padding:0 16px;background:radial-gradient(#050a12b8,#050a1200 72%)}.overlay.off{display:none}.ovT{font-size:clamp(20px,4.2vw,44px);font-weight:950;letter-spacing:.14em}.ovN{font-size:clamp(64px,12vw,130px);font-weight:950;color:#47e9c4;line-height:1.05;font-variant-numeric:tabular-nums;text-shadow:0 0 40px #2de5c180}.ovS{font-size:12px;color:#9cbacb;letter-spacing:.12em;margin-top:6px}.overlay.warn .ovT{color:#ff9b82;animation:blink .55s infinite}@keyframes blink{50%{opacity:.3}}
 body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.mono{font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.5;word-break:break-all;color:#b3d0dd;background:#071521;border:1px solid #274358;border-radius:9px;padding:10px;margin-top:8px;white-space:pre-wrap}.fgrid .betInput input{font-size:15px;font-family:ui-monospace,Menlo,monospace}@media(max-width:760px){.fgrid{grid-template-columns:1fr}}
 
-/* V15 layout: stage on top, two bet cards under it */
+
 .shell{max-width:1100px;padding:10px 14px 28px}header{margin-bottom:8px}.brand{font-size:20px}.tag{font-size:9px;padding:6px 10px}.smallbtn{padding:6px 9px;font-size:12px}
 .stage{border-radius:16px}.stage canvas{height:clamp(260px,calc(100vh - 380px),520px);height:clamp(260px,calc(100svh - 380px),520px)}
 .panel{padding:14px;border-radius:14px}.panel h2{margin:0 0 10px;font-size:11px}.value{font-size:18px}.label{font-size:11px}
@@ -82,8 +82,7 @@ const vis=k=>k==='scout'||k==='strike'||k==='recon'?'drone':k==='rocket'?'missil
 const payC=(st,m)=>Math.floor((Math.round(st*100)*Math.round(m*100)+50)/100); // exact integer-cent payout, half-up (same rule as C# decimal.Round(..., AwayFromZero))
 const payout=(st,m)=>payC(st,m)/100;
 // DEMO ONLY: the first DEMO_SCRIPTED_ROUNDS rounds are guaranteed to end above DEMO_MIN_CRASH so that a first-time viewer sees the visuals
-// (several neutralised threats) instead of an instant crash. Never do this on a real server: it would break the fairness guarantee.
-// The re-roll is transparent: it appends "#demoN" to the combined client seed, so the round still verifies with the seed shown after the round.
+// (several neutralised threats) instead of an instant crash.
 const DEMO_SCRIPTED_ROUNDS=4,DEMO_MIN_CRASH=1.05;
 class Mock{ // DEMO ONLY: stands in for the server inside the page (same protocol/events as the C# hub). Money is kept in integer cents.
  constructor(emit,lat){this.e=emit;this.lat=lat;this.balC=TOP*100;this.nonce=0;this.st='init';this.bets=[null,null];this.seq=0;this.offline=false;this.fault=null;this.idem=new Map();this.last=null;this.resolved=new Set();this.waitEnd=0;this.ledger=[]}
@@ -154,9 +153,7 @@ const HND={
  RoundEnded(d){if(d.nonce<=lastFinalNonce)return;if(d.nonce>nonce){syncState();return}endInfo=d;tryFinalize()},
  AutoCashedOut(d){if(d.nonce<nonce)return;const s=slots[d.slot|0];if(s&&s.placed&&!s.cashed){s.cashed=true;s.cashMult=d.multiplier;chime();refreshRes();log('AUTO CASH OUT '+LET[s.i]+' · '+cur(d.payout)+' at '+d.multiplier.toFixed(2)+'×',true);update()}},
  BetSettled(d){const s=slots[d.slot|0];if(s&&d.nonce===nonce&&d.won&&!s.cashed){s.cashed=true;s.cashMult=d.multiplier;refreshRes()}refreshBalance();update()}};
-// ---- reconnect: ask the server for the authoritative state and rebuild the UI from it
-// Snapshot + event buffer: events that arrive while GetState is in flight are held and replayed AFTER the snapshot is applied
-// (the handlers are idempotent: duplicate spawns, stale nonces and already-finalised rounds are ignored), so nothing is lost or applied twice.
+
 async function syncState(){
   if(syncInFlight){syncQueued=true;return}
   syncInFlight=true;
@@ -226,7 +223,7 @@ chips.forEach(b=>b.addEventListener('click',e=>{SE[+b.dataset.slot||0].bet.value
 document.addEventListener('keydown',e=>{if((e.code==='Space'||e.code==='Enter')&&!['INPUT','BUTTON','SUMMARY'].includes(document.activeElement.tagName)&&!e.repeat){e.preventDefault();toggleBet(0)}});
 $('vBtn').addEventListener('click',verify);
 cSeed='player-'+rhex(3);$('cseed').value=cSeed;$('cseed').addEventListener('input',e=>{cSeed=e.target.value.replace(/[^A-Za-z0-9_-]/g,'').slice(0,24)||'player'});
-// ---- sound (synthesized, no audio files)
+
 function ac(){if(!AC){try{AC=new(window.AudioContext||window.webkitAudioContext)();master=AC.createGain();master.gain.value=muted?0:.5;{const cp=AC.createDynamicsCompressor();master.connect(cp);cp.connect(AC.destination)}}catch(e){AC=null}}if(AC&&AC.state==='suspended')AC.resume();return AC}
 function env(g,t,d,v,p){const G=g.gain;if(p){G.setValueAtTime(v,t);G.exponentialRampToValueAtTime(.0001,t+d)}else{const a=Math.min(.08,d/4);G.setValueAtTime(.0001,t);G.exponentialRampToValueAtTime(v,t+a);G.setValueAtTime(v,Math.max(t+a,t+d-.12));G.exponentialRampToValueAtTime(.0001,t+d)}}
 function osc(type,f0,f1,t,d,v,D,p){const o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.setValueAtTime(f0,t);if(f1!==f0)o.frequency.exponentialRampToValueAtTime(f1,t+d);env(g,t,d,v,p);o.connect(g).connect(D);o.start(t);o.stop(t+d+.05);return o}
