@@ -1,0 +1,264 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>THREAT X | Visual Demo V20</title><style>
+:root{color-scheme:dark;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:#050a12;color:#edf8ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -15%,#163a4c 0,#071320 45%,#050a12 85%)}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.42;cursor:not-allowed}.shell{max-width:1320px;margin:auto;padding:18px 20px 36px}header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:17px;flex-wrap:wrap}.brand{font-size:28px;font-weight:950;letter-spacing:.17em}.brand span{color:#47e9c4}.tag{font-size:10px;letter-spacing:.18em;color:#9cbacb;border:1px solid #355467;padding:8px 12px;border-radius:30px;background:#0d1c2a}.topright{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.dot{display:inline-block;background:#4ce6bd;width:7px;height:7px;border-radius:50%;margin-right:7px;box-shadow:0 0 12px #4ce6bd}.stage{position:relative;overflow:hidden;border:1px solid #315367;border-radius:20px;background:#071525;box-shadow:0 24px 75px #0008}.stage canvas{display:block;width:100%;height:clamp(380px,53vw,590px)}.hud{position:absolute;top:24px;left:25px;pointer-events:none}.eyebrow{font-size:11px;letter-spacing:.22em;color:#88aabd;font-weight:700}.mult{font-size:clamp(53px,8vw,102px);font-weight:950;letter-spacing:-.055em;line-height:1.05;text-shadow:0 0 35px #2de5c15c;font-variant-numeric:tabular-nums}.mult span{color:#4decc5}.sub{color:#bdd4e0;font-size:13px;margin-top:9px}.rightHud{position:absolute;top:25px;right:24px;text-align:right;font-size:12px;color:#b3cbd8;pointer-events:none}.rightHud strong{display:block;font-size:18px;color:#f1f8ff;margin-top:4px}.stageFooter{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;gap:10px;align-items:end;padding:50px 23px 20px;background:linear-gradient(transparent,#06111bdc);pointer-events:none}.stageFooter small{display:block;color:#8eaab9;letter-spacing:.12em;font-size:10px}.stageFooter strong{font-size:17px}.warning{color:#ffb97d!important}.layout{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}.panel{border:1px solid #294558;background:linear-gradient(145deg,#102536,#0a1725);border-radius:17px;padding:20px}.panel h2{margin:0 0 18px;font-size:12px;letter-spacing:.18em;color:#99b8c8}.row{display:flex;justify-content:space-between;gap:12px;align-items:center}.label{font-size:12px;color:#9bb5c5}.value{font-size:23px;font-weight:850}.chips{display:flex;gap:8px;margin-top:12px}.chips button{flex:1;background:#132e3c;color:#d7f1fb;border:1px solid #31576b;border-radius:9px;padding:10px 5px}.chips button:hover{border-color:#4ce6c1}.betInput{display:flex;align-items:center;gap:12px;background:#071521;border:1px solid #355568;border-radius:12px;padding:9px 12px;margin-top:10px}.betInput input{width:100%;min-width:0;background:transparent;color:white;border:0;outline:none;font-size:24px;font-weight:800}.betInput span{color:#8caab9}.action{width:100%;margin-top:16px;border:0;border-radius:12px;padding:17px 10px;background:linear-gradient(120deg,#52f3bf,#21b9b2);color:#04251e;font-weight:950;letter-spacing:.06em;font-size:17px;box-shadow:0 6px 28px #22d9b43d}.action.cash{background:linear-gradient(120deg,#ffd275,#fa9748);color:#38200c;box-shadow:0 6px 28px #ffa3433c}.action:disabled{box-shadow:none}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.stat{background:#091a29;border:1px solid #274358;border-radius:11px;padding:12px}.stat small{display:block;color:#88aabd;font-size:10px;margin-bottom:8px}.stat b{font-size:18px}.history{display:flex;gap:7px;flex-wrap:wrap;min-height:40px}.history span{border-radius:7px;background:#102b3a;border:1px solid #315066;padding:8px 10px;color:#a9d4e3;font-weight:800;font-size:12px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#7996a9;font-size:11px;margin-top:14px;line-height:1.6}.smallbtn{background:#122b3a;color:#c4e3ef;border:1px solid #36586c;border-radius:8px;padding:8px 11px}.event{font-size:13px;line-height:1.5;color:#b3d0dd;min-height:38px}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}@media(max-width:760px){.shell{padding:12px}.layout{grid-template-columns:1fr}.stage canvas{height:440px}.hud{left:16px;top:18px}.rightHud{right:15px;top:19px}.stageFooter{padding:50px 15px 15px}.brand{font-size:22px}.mult{font-size:63px}.stats{gap:5px}.stat{padding:10px}.stat b{font-size:15px}}
+.sr{white-space:nowrap}button:focus-visible,input:focus-visible{outline:2px solid #47e9c4;outline-offset:2px}.betInput:focus-within{border-color:#4ce6c1}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.mult.crash{color:#ff9b82;text-shadow:0 0 35px #ff865f5c}.mult{transform-origin:left}.mult.pop{animation:pop .25s}@keyframes pop{50%{transform:scale(1.06)}}
+.overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;text-align:center;padding:0 16px;background:radial-gradient(#050a12b8,#050a1200 72%)}.overlay.off{display:none}.ovT{font-size:clamp(20px,4.2vw,44px);font-weight:950;letter-spacing:.14em}.ovN{font-size:clamp(64px,12vw,130px);font-weight:950;color:#47e9c4;line-height:1.05;font-variant-numeric:tabular-nums;text-shadow:0 0 40px #2de5c180}.ovS{font-size:12px;color:#9cbacb;letter-spacing:.12em;margin-top:6px}.overlay.warn .ovT{color:#ff9b82;animation:blink .55s infinite}@keyframes blink{50%{opacity:.3}}
+body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.mono{font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.5;word-break:break-all;color:#b3d0dd;background:#071521;border:1px solid #274358;border-radius:9px;padding:10px;margin-top:8px;white-space:pre-wrap}.fgrid .betInput input{font-size:15px;font-family:ui-monospace,Menlo,monospace}@media(max-width:760px){.fgrid{grid-template-columns:1fr}}
+
+/* V15 layout: stage on top, two bet cards under it */
+.shell{max-width:1100px;padding:10px 14px 28px}header{margin-bottom:8px}.brand{font-size:20px}.tag{font-size:9px;padding:6px 10px}.smallbtn{padding:6px 9px;font-size:12px}
+.stage{border-radius:16px}.stage canvas{height:clamp(260px,calc(100vh - 380px),520px);height:clamp(260px,calc(100svh - 380px),520px)}
+.panel{padding:14px;border-radius:14px}.panel h2{margin:0 0 10px;font-size:11px}.value{font-size:18px}.label{font-size:11px}
+.betInput{padding:6px 10px;margin-top:6px}.betInput input{font-size:19px}.chips{margin-top:8px;gap:6px}.chips button{padding:7px 4px;font-size:13px}
+.stats{margin-top:10px}.stat{padding:8px}.stat b{font-size:15px}.event{font-size:12px;min-height:32px}.foot{margin-top:8px;font-size:10px}
+.mult{font-size:clamp(40px,6vw,78px)}.hud{top:14px;left:16px}.rightHud{top:14px;right:16px;font-size:11px}.rightHud strong{font-size:15px}
+.stageFooter{padding:40px 16px 12px}.stageFooter strong{font-size:14px}.sub{font-size:12px;margin-top:4px}
+.ovT{font-size:clamp(16px,2.6vw,30px)}.ovN{font-size:clamp(52px,8vw,96px)}
+.win{margin-top:8px;font-size:clamp(16px,2.2vw,26px);font-weight:900;color:#ffd275;text-shadow:0 0 24px #ff9c4a55}.ovW{font-size:clamp(18px,3vw,34px);font-weight:900;margin-top:12px;color:#ffd275}
+.dock{display:grid;grid-template-columns:170px 1fr 1fr;gap:10px;margin-top:10px}.layout{display:block;margin-top:10px}
+.wallet,.bcard{border:1px solid #294558;background:linear-gradient(145deg,#102536,#0a1725);border-radius:14px;padding:12px}
+.wallet>div+div{margin-top:12px}.bhead{font-size:12px;letter-spacing:.14em;color:#99b8c8;margin-bottom:2px}
+.bcard .action{margin-top:8px;padding:11px 8px;font-size:14px;width:100%;border:0;border-radius:12px;background:linear-gradient(120deg,#52f3bf,#21b9b2);color:#04251e;font-weight:950;letter-spacing:.05em}.bcard .action.cash{background:linear-gradient(120deg,#ffd275,#fa9748);color:#38200c}
+details.auto{margin-top:8px;border:1px solid #28485b;border-radius:10px;background:#0a1b2a;padding:7px 10px}details.auto summary{cursor:pointer;font-size:11px;letter-spacing:.1em;color:#9dc0d1;list-style:none}details.auto summary::-webkit-details-marker{display:none}
+.arow{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#b3cbd8;margin-top:8px}.arow input[type=number]{width:74px;background:#071521;color:#fff;border:1px solid #355568;border-radius:7px;padding:5px 6px}.arow input[type=checkbox]{width:20px;height:20px}
+@media(max-width:900px){.shell{padding:8px 10px 12px}.tag{display:none}.brand{font-size:17px}.mult{font-size:44px}.rightHud{font-size:10px}.stage canvas{height:min(50vh,440px);height:min(50svh,440px)}
+ .dock{position:sticky;bottom:0;z-index:6;grid-template-columns:1fr 1fr;gap:6px;padding:8px;margin:8px -10px 0;background:#0b1a28f2;box-shadow:0 -10px 30px #000a;border-radius:14px 14px 0 0}
+ .wallet{grid-column:1/-1;display:flex;justify-content:space-between;padding:6px 10px}.wallet>div+div{margin-top:0;text-align:right}.wallet .value{font-size:15px}
+ .bcard{padding:8px}.bcard .chips{display:none}.bcard .action{font-size:11px;padding:10px 4px;letter-spacing:.02em}.arow{font-size:11px}}
+</style></head><body><main class="shell"><div class="sr" id="srLive" role="status" aria-live="polite" aria-atomic="true"></div><header><div class="brand">THREAT <span>X</span></div><div class="topright"><span class="tag"><i class="dot"></i>INTERACTIVE CONCEPT · V20</span><button class="smallbtn" id="mute" aria-pressed="false">🔊 SOUND ON</button><button class="smallbtn" id="reset">RESET DEMO</button></div></header><section class="stage" aria-label="Animated game battlefield"><canvas id="scene" role="img" aria-label="Animated defense battlefield: threats approach the base while the multiplier rises"></canvas><div class="overlay" id="overlay" aria-hidden="true"><div class="ovT" id="ovT"></div><div class="ovN" id="ovN"></div><div class="ovS" id="ovS"></div><div class="ovW" id="ovW"></div></div><div class="hud"><div class="eyebrow">LIVE MULTIPLIER</div><div class="mult" id="mult" aria-hidden="true">1.00<span>×</span></div><div class="sub" id="status">PLACE YOUR BET</div><div class="win" id="win"></div></div><div class="rightHud">ROUND <strong id="round">#0001</strong><br><br>THREATS NEUTRALIZED <strong id="kills">0</strong></div><div class="stageFooter"><div><small>DEFENSE STATUS</small><strong id="defense">SYSTEM STANDBY</strong></div><div style="text-align:right"><small>NEXT CONTACT</small><strong id="next">—</strong></div></div></section><section class="dock"><div class="wallet"><div><div class="label">DEMO BALANCE</div><div class="value" id="balance">$10,000.00</div></div><div><div class="label">POTENTIAL RETURN</div><div class="value" id="potential">$0.00</div></div></div><section class="bcard"><div class="bhead"><b>BET A</b></div><div class="betInput"><input id="bet0" type="number" min="1" max="10000" step="0.01" value="10" aria-label="Bet A amount in dollars"><span>$</span></div><div class="chips"><button data-bet="1" data-slot="0" aria-label="Set bet A to 1 dollars">$1</button><button data-bet="10" data-slot="0" aria-label="Set bet A to 10 dollars">$10</button><button data-bet="100" data-slot="0" aria-label="Set bet A to 100 dollars">$100</button><button data-bet="1000" data-slot="0" aria-label="Set bet A to 1000 dollars">$1000</button></div><button id="action0" class="action">PLACE BET</button><details class="auto" id="auto0"><summary>⚙ AUTO · <span id="autoS0">BET OFF</span></summary><label class="arow">Auto bet every round<input type="checkbox" id="autoBet0"></label><label class="arow">Number of rounds (0 = no limit)<input type="number" id="autoRounds0" min="0" max="999" value="0"></label><label class="arow">Auto cash out at ×<input type="number" id="autoCash0" min="1.05" max="100" step="0.05" placeholder="off"></label></details></section><section class="bcard"><div class="bhead"><b>BET B</b></div><div class="betInput"><input id="bet1" type="number" min="1" max="10000" step="0.01" value="10" aria-label="Bet B amount in dollars"><span>$</span></div><div class="chips"><button data-bet="1" data-slot="1" aria-label="Set bet B to 1 dollars">$1</button><button data-bet="10" data-slot="1" aria-label="Set bet B to 10 dollars">$10</button><button data-bet="100" data-slot="1" aria-label="Set bet B to 100 dollars">$100</button><button data-bet="1000" data-slot="1" aria-label="Set bet B to 1000 dollars">$1000</button></div><button id="action1" class="action">PLACE BET</button><details class="auto" id="auto1"><summary>⚙ AUTO · <span id="autoS1">BET OFF</span></summary><label class="arow">Auto bet every round<input type="checkbox" id="autoBet1"></label><label class="arow">Number of rounds (0 = no limit)<input type="number" id="autoRounds1" min="0" max="999" value="0"></label><label class="arow">Auto cash out at ×<input type="number" id="autoCash1" min="1.05" max="100" step="0.05" placeholder="off"></label></details></section></section><div class="layout"><section class="panel"><h2>TACTICAL INTELLIGENCE</h2><div class="event" id="event" aria-live="off">Place your bet. Every destroyed threat adds its own multiplier. Cash out before one breaks through.</div><div class="stats"><div class="stat"><small>SMALL DRONES</small><b id="drones">0</b></div><div class="stat"><small>MISSILES</small><b id="missiles">0</b></div><div class="stat"><small>HEAVY THREATS</small><b id="heavy">0</b></div></div><h2 style="margin-top:22px">RECENT ROUNDS</h2><div class="history" id="history"><span>NO DATA YET</span></div><div class="foot"><span>Visual prototype · <span id="mode"></span> · no real money · SPACE/ENTER = Bet A · cash out unlocks after the first interception</span></div></section></div><section class="panel" style="margin-top:15px"><h2>PROVABLY FAIR · SEEDS</h2><div class="fgrid"><div><div class="label">NEXT ROUND <b id="fNonce">#0001</b> · SERVER SEED HASH (SHA-256, committed before betting)</div><div class="mono" id="fHash">…</div><label class="label" for="cseed" style="display:block;margin-top:14px">CLIENT SEED · edit it before the round starts</label><div class="betInput"><input id="cseed" type="text" maxlength="24" autocomplete="off" spellcheck="false"></div></div><div><div class="label" id="lastInfo">LAST ROUND · no data yet</div><label class="label" for="vSeed" style="display:block;margin-top:10px">SERVER SEED (revealed after the crash)</label><div class="betInput"><input id="vSeed" type="text" autocomplete="off" spellcheck="false"></div><label class="label" for="vClient" style="display:block;margin-top:10px">CLIENT SEED</label><div class="betInput"><input id="vClient" type="text" autocomplete="off" spellcheck="false"></div><label class="label" for="vNonce" style="display:block;margin-top:10px">NONCE (round number)</label><div class="betInput"><input id="vNonce" type="number" min="1" step="1"></div><button class="smallbtn" id="vBtn" style="margin-top:12px">VERIFY ROUND</button><div class="mono" id="vOut" aria-live="polite">Paste any server seed, client seed and nonce to recompute a round.</div></div></div><div class="foot"><span>Outcome = HMAC-SHA256(serverSeed, first three client seeds:nonce) → sfc32 generator → hidden target and every threat. The hash is shown before betting, the seed is revealed after the crash. In LIVE SERVER mode the seed exists only on the server until the reveal.</span></div></section></main><script>
+(()=>{'use strict';const $=id=>document.getElementById(id),canvas=$('scene'),ctx=canvas.getContext('2d');let W=1000,H=560,dpr=1,frame=0,balance=1000,bet=25,mult=1,round=1,kills=0,drones=0,missiles=0,heavy=0,phase='ready',nextAt=0,crashAt=0,crashMult=2,breachAt=0,breachSpawned=false,breachHit=false,cashMult=1,cooldownUntil=0,lastTime=0,elapsed=0,entities=[],particles=[],stars=[],history=[],cashed=false,stake=0;const rand=(a,b)=>a+Math.random()*(b-a),fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});function resize(){const r=canvas.getBoundingClientRect();W=r.width;H=r.height;dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);stars=Array.from({length:75},()=>({x:rand(0,W),y:rand(0,H*.75),a:rand(.1,.65),r:rand(.4,1.5)}))}window.addEventListener('resize',resize);resize();const reduce=matchMedia('(prefers-reduced-motion: reduce)'),MIN=1,MAX=10000,TOP=10000,cur=n=>'$'+fmt(n),Q=new URLSearchParams(location.search),LIVE=Q.get('server')==='1',LAT=+Q.get('lat')||0,LET=['A','B'];
+let syncInFlight=false,syncQueued=false,evBuf=[],offline=false,lastFinalNonce=0,hiddenAt=0,netc=null,cSeed='',nonce=0,endInfo=null,seqN=0,waitEnd=performance.now()+5000,waitLeft=5000,roundT0=0,crashed=false,capEnd=false,lastTick=0,lastWhole=1,floaters=[],fairLog={},AC=null,master=null,muted=false,nb=null,resTxt='';balance=TOP;phase='wait';
+const slots=[0,1].map(i=>({i,placed:false,stake:0,cashed:false,cashMult:1,cashing:false,busy:false,autoLeft:0,autoLimited:false}));
+const SE=[0,1].map(i=>({bet:$('bet'+i),action:$('action'+i),autoS:$('autoS'+i),autoBet:$('autoBet'+i),autoRounds:$('autoRounds'+i),autoCash:$('autoCash'+i),det:$('auto'+i)}));
+const el={},cache={},chips=[...document.querySelectorAll('[data-bet]')];['balance','potential','mult','round','kills','drones','missiles','heavy','status','defense','next','overlay','ovT','ovN','ovS','win','ovW'].forEach(i=>el[i]=$(i));
+const uuid=()=>crypto.randomUUID?crypto.randomUUID():(h=>h.slice(0,8)+'-'+h.slice(8,12)+'-4'+h.slice(13,16)+'-a'+h.slice(17,20)+'-'+h.slice(20,32))(rhex(16));
+function T(k,v){if(cache[k]!==v){cache[k]=v;el[k].textContent=v}}
+function TT(k,e,v){if(cache[k]!==v){cache[k]=v;e.textContent=v}}
+function pop(){el.mult.classList.remove('pop');void el.mult.offsetWidth;el.mult.classList.add('pop')}
+function log(s,a){$('event').textContent=s;if(a)$('srLive').textContent=s}
+const r2=n=>Math.round(n*100)/100;
+function refreshRes(){const w=slots.filter(s=>s.placed&&s.cashed);if(!w.length){resTxt='';return}let pay=0,st=0;w.forEach(s=>{pay+=payout(s.stake,s.cashMult);st+=s.stake});resTxt='YOU WON '+cur(pay)+' (+'+cur(r2(pay-st))+')'}
+function update(){const run=phase==='running',secs=Math.max(1,Math.ceil(waitLeft/1000)),anyP=slots.some(s=>s.placed);
+ const pot=slots.reduce((a,s)=>a+(run&&s.placed&&!s.cashed?s.stake*mult:0),0);
+ T('balance',cur(balance));T('potential',cur(pot));
+ const mh=mult.toFixed(2);if(cache.mult!==mh){cache.mult=mh;el.mult.innerHTML=mh+'<span>×</span>'}
+ const mc='mult'+(crashed?' crash':'');if(cache.mc!==mc){cache.mc=mc;el.mult.className=mc}
+ T('round','#'+String(round).padStart(4,'0'));T('kills',kills);T('drones',drones);T('missiles',missiles);T('heavy',heavy);
+ slots.forEach(s=>{const e=SE[s.i],i=s.i,lock=s.placed||run;
+  if(cache['lk'+i]!==lock){cache['lk'+i]=lock;e.bet.disabled=lock;chips.forEach(x=>{if(+x.dataset.slot===i)x.disabled=lock})}
+  const live=run&&s.placed&&!s.cashed;
+  TT('ac'+i,e.action,live?(mult>1?'CASH OUT · '+cur(s.stake*mult):'FIRST CONTACT · LOCKED'):run?(s.placed?'CASHED OUT · '+cur(s.stake*s.cashMult):'BETS CLOSED'):s.placed?'BET PLACED':balance<MIN?'OUT OF FUNDS':'PLACE BET');
+  const ac='action'+(live&&mult>1?' cash':'');if(cache['ak'+i]!==ac){cache['ak'+i]=ac;e.action.className=ac}
+  const dis=offline||s.cashing||s.busy||(run&&(!s.placed||s.cashed||mult<=1))||(!run&&(s.placed||balance<MIN));if(e.action.disabled!==dis)e.action.disabled=dis;
+  TT('as'+i,e.autoS,(e.autoBet.checked?'BET ON'+(s.autoLimited?' · '+s.autoLeft+' left':''):'BET OFF')+(e.autoCash.value?' · OUT @'+e.autoCash.value+'×':''))});
+ if(cache.rn!==run){cache.rn=run;$('cseed').disabled=run}
+ const allC=slots.filter(s=>s.placed).every(s=>s.cashed);
+ T('status',offline?'CONNECTION LOST · RECONNECTING…':run?(anyP?(allC?'CASHED OUT · WATCHING ROUND':'DEFENSE ACTIVE'):'ROUND IN PROGRESS · BETS CLOSED'):(anyP?'BET ACCEPTED':crashed?'DEFENSE BREACHED':'PLACE YOUR BET')+' · ROUND STARTS IN '+secs+'s');
+ T('defense',run?'INTERCEPTING':crashed?'BASE DESTROYED':'SYSTEM STANDBY');
+ const dc=!run&&crashed?'warning':'';if(cache.dc!==dc){cache.dc=dc;el.defense.className=dc}
+ const ov=run?(performance.now()-roundT0<1400?'warn':'off'):'wait';
+ if(cache.ov!==ov){cache.ov=ov;el.overlay.className='overlay'+(ov==='warn'?' warn':ov==='off'?' off':'');el.ovT.textContent=ov==='warn'?'⚠ INCOMING MISSILE':'PLEASE PLACE YOUR BETS'}
+ T('ovN',ov==='wait'?String(secs):'');T('ovS',ov==='warn'?'BETS CLOSED':ov==='wait'?(history.length?'LAST ROUND CRASHED AT '+history[0].c.toFixed(2)+'×':'ROUND STARTS WHEN THE TIMER REACHES 0'):'');
+ T('win',resTxt);T('ovW',ov==='wait'?resTxt:'');T('next',run?'—':secs+'s')}
+function burst(x,y,c,n=22){if(reduce.matches)n=Math.ceil(n/4);for(let i=0;i<n;i++){let a=rand(0,Math.PI*2),v=rand(25,180);particles.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,life:rand(.35,.95),max:1,color:c})}}
+
+
+const enc=new TextEncoder(),hx=b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join(''),rhex=n=>hx(crypto.getRandomValues(new Uint8Array(n)));
+async function sha(t){return hx(await crypto.subtle.digest('SHA-256',enc.encode(t)))}
+async function hmac(k,m){const key=await crypto.subtle.importKey('raw',enc.encode(k),{name:'HMAC',hash:'SHA-256'},false,['sign']);return new DataView(await crypto.subtle.sign('HMAC',key,enc.encode(m)))}
+function sfc32(a,b,c,d){return()=>{a>>>=0;b>>>=0;c>>>=0;d>>>=0;let t=(a+b|0)+d|0;d=d+1|0;a=b^b>>>9;b=c+(c<<3)|0;c=c<<21|c>>>11;c=c+t|0;return(t>>>0)/4294967296}}
+const RW=[['scout','drone',.25,.40,2],['strike','drone',.5,.28,2],['rocket','missile',1,.18,2],['heavy','heavy',2,.10,2],['doom','heavy',5,.04,2],['recon','drone',.05,0,2]],RHO=.96,CAPM=100,CAP100=Math.round(CAPM*100);
+// Exact arithmetic: multipliers are integers in hundredths (1.05x = 105). A neutralised threat can never lift the multiplier above the cap:
+// the effective result is min(m + reward, cap). The threat survives iff that value <= T, so a capped round ends at exactly 100.00x.
+function advance(m100,v100,T){const eff=Math.min(m100+v100,CAP100),breach=eff/100>T;return{breach,cap:!breach&&eff>=CAP100,after:breach?m100:eff}}
+function genPlan(r){const T=RHO/(1-r());let m=100,rt=2600+r()*500,end=-1;const seq=[];for(;;){const u=r();let k=4,a=0;for(let i=0;i<5;i++){a+=RW[i][3];if(u<a){k=i;break}}if(!seq.length)k=5;const[name,type,rw,,dur]=RW[k],v=Math.round(rw*100),decoy=end>=0,s=decoy?{breach:false,cap:false,after:m}:advance(m,v,T);seq.push({name,type,val:(decoy||s.breach?v:s.after-m)/100,after:s.after/100,dur,at:rt-dur*1000,breach:s.breach,cap:s.cap,decoy});if(s.breach||s.cap)end=rt;if(!decoy&&!s.breach)m=s.after;rt+=550+r()*450;if(end>=0&&rt>end+3200)break}seq.sort((a,b)=>a.at-b.at);return{target:T,crash:m/100,seq}}
+async function planFor(sv,cl,n){const h=await hmac(sv,cl+':'+n),r=sfc32(h.getUint32(0),h.getUint32(4),h.getUint32(8),h.getUint32(12));for(let i=0;i<12;i++)r();return genPlan(r)}
+
+
+async function verify(){const sv=$('vSeed').value.trim(),cl=$('vClient').value.trim(),n=Number($('vNonce').value),o=$('vOut');if(!sv||!cl||!(n>=1)){o.textContent='Enter server seed, client seed and nonce.';return}try{const h=await sha(sv),p=await planFor(sv,cl,n),rec=fairLog[n];o.textContent='SHA-256(server seed):\n'+h+'\nRecomputed crash: '+p.crash.toFixed(2)+'× · threats: '+p.seq.filter(x=>!x.decoy).length+(rec?'\n'+(rec.hash===h&&Math.abs(rec.crash-p.crash)<.005?'✓ matches the hash committed before the round and the crash shown':'✗ MISMATCH with this session\'s round'):'')}catch(e){o.textContent='Verification needs HTTPS (WebCrypto).'}}
+
+
+const vis=k=>k==='scout'||k==='strike'||k==='recon'?'drone':k==='rocket'?'missile':'heavy';
+const payC=(st,m)=>Math.floor((Math.round(st*100)*Math.round(m*100)+50)/100); // exact integer-cent payout, half-up (same rule as C# decimal.Round(..., AwayFromZero))
+const payout=(st,m)=>payC(st,m)/100;
+// DEMO ONLY: the first DEMO_SCRIPTED_ROUNDS rounds are guaranteed to end above DEMO_MIN_CRASH so that a first-time viewer sees the visuals
+// (several neutralised threats) instead of an instant crash. Never do this on a real server: it would break the fairness guarantee.
+// The re-roll is transparent: it appends "#demoN" to the combined client seed, so the round still verifies with the seed shown after the round.
+const DEMO_SCRIPTED_ROUNDS=4,DEMO_MIN_CRASH=1.05;
+class Mock{ // DEMO ONLY: stands in for the server inside the page (same protocol/events as the C# hub). Money is kept in integer cents.
+ constructor(emit,lat){this.e=emit;this.lat=lat;this.balC=TOP*100;this.nonce=0;this.st='init';this.bets=[null,null];this.seq=0;this.offline=false;this.fault=null;this.idem=new Map();this.last=null;this.resolved=new Set();this.waitEnd=0;this.ledger=[]}
+ get bal(){return this.balC/100} set bal(v){this.balC=Math.round(v*100)}
+ out(n,d){if(this.offline)return;const f=()=>this.e(n,d);this.lat?setTimeout(f,this.lat):f()}
+ goOffline(){if(!this.offline){this.offline=true;this.e('__offline',{})}}
+ reconnect(){if(this.offline){this.offline=false;this.e('__reconnected',{})}}
+ drop(ms){this.goOffline();setTimeout(()=>this.reconnect(),ms)}
+ rpc(fn){const w=ms=>new Promise(r=>setTimeout(r,ms));return(async()=>{if(this.offline)throw new Error('offline');const f=this.fault;this.fault=null;
+  if(f==='before'){this.drop(this.reconnectMs||1500);throw new Error('connection lost')}
+  if(this.lat)await w(this.lat);const r=await fn();
+  if(f==='after'){this.drop(this.reconnectMs||1500);throw new Error('response lost')}
+  if(this.lat)await w(this.lat);return r})()}
+ idemRun(key,sig,fn){const h=this.idem.get(key);if(h)return h.sig===sig?h.res:{ok:false,error:'IDEMPOTENCY_CONFLICT'};const res=fn();this.idem.set(key,{sig,res});return res}
+ balance(){return this.rpc(async()=>this.bal)}
+ start(){this.open()}
+ async open(){this.nonce++;this.seed=rhex(32);this.hash=await sha(this.seed);this.bets=[null,null];this.resolved=new Set();this.st='wait';this.waitEnd=performance.now()+5000;this.out('RoundOpened',{nonce:this.nonce,serverSeedHash:this.hash,bettingMs:5000});setTimeout(()=>this.run(),5000)}
+ async run(){this.cs=this.bets.filter(Boolean).sort((a,b)=>a.seq-b.seq).slice(0,3).map(b=>b.seed).join('|')||'no-bets';this.plan=await planFor(this.seed,this.cs,this.nonce);
+  if(this.nonce<=DEMO_SCRIPTED_ROUNDS&&this.plan.crash<=DEMO_MIN_CRASH){for(let k=1;k<200;k++){const cs2=this.cs+'#demo'+k,p2=await planFor(this.seed,cs2,this.nonce);if(p2.crash>DEMO_MIN_CRASH){this.cs=cs2;this.plan=p2;break}}} // DEMO ONLY (see the comment above DEMO_SCRIPTED_ROUNDS)
+  const tl=[];this.plan.seq.forEach((q,i)=>{q.id=i;tl.push({ms:q.at,res:false,q},{ms:q.at+q.dur*1000,res:true,q})});this.tl=tl.sort((a,b)=>a.ms-b.ms||(b.res-a.res));this.p=0;this.mult=1;this.t0=performance.now();this.st='active';this.out('RoundStarted',{nonce:this.nonce});this.pump()}
+ cashBet(b,i){b.cashed=true;b.m=this.mult;this.out('AutoCashedOut',{nonce:this.nonce,slot:i,multiplier:b.m,payout:payout(b.stake,b.m)})}
+ pump(){if(this.st!=='active')return;const now=performance.now()-this.t0,n=this.nonce;
+  while(this.st==='active'&&this.p<this.tl.length&&this.tl[this.p].ms<=now){const it=this.tl[this.p++],q=it.q;
+   if(!it.res){this.out('ThreatSpawned',{nonce:n,id:q.id,kind:q.name,reward:q.val,spawnMs:q.at,resolveMs:q.at+q.dur*1000});continue}
+   if(q.decoy)continue;
+   if(q.breach){this.out('ThreatResolved',{nonce:n,id:q.id,neutralized:false,multiplier:this.mult,resolveMs:it.ms});this.end('Breach');break}
+   this.mult=q.after;this.resolved.add(q.id);this.out('ThreatResolved',{nonce:n,id:q.id,neutralized:true,multiplier:this.mult,resolveMs:it.ms});
+   this.bets.forEach((b,i)=>{if(b&&!b.cashed&&b.auto&&this.mult>=b.auto)this.cashBet(b,i)}); // server-side auto cash-out: first state >= target
+   if(q.cap){this.bets.forEach((b,i)=>{if(b&&!b.cashed)this.cashBet(b,i)});this.end('Cap');break}} // at exactly the cap every active bet is cashed out
+  if(this.st==='active'&&this.p<this.tl.length){clearTimeout(this.tm);this.tm=setTimeout(()=>this.pump(),Math.max(1,this.tl[this.p].ms-(performance.now()-this.t0)))}}
+ end(kind){this.st='ended';clearTimeout(this.tm);const bets=[];
+  this.bets.forEach((b,i)=>{if(!b)return;const won=!!b.cashed,pc=won?payC(b.stake,b.m):0;if(won){this.balC+=pc;this.ledger.push({t:'P',id:b.id,c:pc})}bets.push({slot:i,betId:b.id,stake:b.stake,won,multiplier:won?b.m:0,payout:pc/100})});
+  this.last={nonce:this.nonce,endKind:kind,finalMultiplier:this.mult,serverSeed:this.seed,clientSeedCombined:this.cs,bets};
+  this.out('RoundEnded',{nonce:this.nonce,endKind:kind,finalMultiplier:this.mult,serverSeed:this.seed,clientSeedCombined:this.cs});
+  bets.forEach(b=>this.out('BetSettled',{nonce:this.nonce,betId:b.betId,slot:b.slot,won:b.won,multiplier:b.multiplier,payout:b.payout}));setTimeout(()=>this.open(),0)}
+ placeBet(stake,seed,key,slot,auto){return this.rpc(async()=>this.idemRun(key,'P'+slot+':'+stake+':'+seed+':'+auto,()=>{
+  if(this.st!=='wait')return{ok:false,error:'BETS_CLOSED'};if(slot!==0&&slot!==1)return{ok:false,error:'INVALID_SLOT'};if(this.bets[slot])return{ok:false,error:'ALREADY_BET'};
+  if(!(stake>=MIN&&stake<=MAX)||Math.round(stake*100)/100!==stake)return{ok:false,error:'INVALID_STAKE'};if(typeof seed!=='string'||!/^[A-Za-z0-9_-]{1,24}$/.test(seed))return{ok:false,error:'INVALID_SEED'};if(auto!=null&&!(auto>=1.05&&auto<=100))return{ok:false,error:'INVALID_AUTO'};
+  const sc=Math.round(stake*100);if(sc>this.balC)return{ok:false,error:'INSUFFICIENT_FUNDS'};
+  this.balC-=sc;const id=uuid();this.ledger.push({t:'S',id,c:-sc});this.bets[slot]={id,stake,seed,auto:auto||0,cashed:false,m:0,seq:this.seq++};return{ok:true,betId:id}}))}
+ cashOut(key,n,slot){return this.rpc(async()=>this.idemRun(key,'C'+slot+':'+n,()=>{if(n!==this.nonce)return{ok:false,error:'ROUND_ENDED'};this.pump();const b=this.bets[slot];if(!b)return{ok:false,error:'NO_BET'};
+  if(b.cashed)return{ok:true,multiplier:b.m,payout:payout(b.stake,b.m)};if(this.st!=='active')return{ok:false,error:'LOST'};if(this.mult<=1)return{ok:false,error:'LOCKED'};
+  b.cashed=true;b.m=this.mult;return{ok:true,multiplier:b.m,payout:payout(b.stake,b.m)}}))}
+ getState(){return this.rpc(async()=>{this.pump();const act=this.st==='active';
+  return{nonce:this.nonce,phase:act?'active':'waiting',serverSeedHash:this.hash, // never the current round's seed
+   bettingMsLeft:act?0:Math.max(0,this.waitEnd-performance.now()),elapsedMs:act?performance.now()-this.t0:0,multiplier:act?this.mult:1,
+   threats:act?this.tl.slice(0,this.p).filter(it=>!it.res).map(it=>({id:it.q.id,kind:it.q.name,reward:it.q.val,spawnMs:it.q.at,resolveMs:it.q.at+it.q.dur*1000,resolved:this.resolved.has(it.q.id)})):[],
+   bets:this.bets.map((b,i)=>b?{slot:i,stake:b.stake,state:b.cashed?'CashedOut':act?'Active':'Placed',autoCashAt:b.auto||null,cashOutMultiplier:b.cashed?b.m:null,payout:b.cashed?payout(b.stake,b.m):null}:null).filter(Boolean),
+   balance:this.bal,last:this.last}})}}
+function loadSignalR(){return new Promise((ok,no)=>{const s=document.createElement('script');s.src='/lib/signalr.min.js';s.onload=ok;s.onerror=()=>{const t=document.createElement('script');t.src='https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js';t.onload=ok;t.onerror=no;document.head.appendChild(t)};document.head.appendChild(s)})}
+class Hub{constructor(emit,token){this.emit=emit;this.token=token}
+ async connect(){await loadSignalR();const c=this.c=new signalR.HubConnectionBuilder().withUrl('/hubs/game',{accessTokenFactory:()=>this.token}).withAutomaticReconnect([0,1000,2000,5000,10000]).build();
+  ['RoundOpened','RoundStarted','ThreatSpawned','ThreatResolved','RoundEnded','BetSettled','AutoCashedOut'].forEach(n=>c.on(n,d=>this.emit(n,d)));
+  c.onreconnecting(()=>this.emit('__offline',{}));c.onreconnected(()=>this.emit('__reconnected',{}));c.onclose(()=>this.emit('__offline',{}));await c.start()}
+ placeBet(s,seed,k,slot,auto){return this.c.invoke('PlaceBet',{stake:s,clientSeed:seed,idempotencyKey:k,slot,autoCashOut:auto})}
+ cashOut(k,n,slot){return this.c.invoke('CashOut',k,n,slot)}
+ getState(){return this.c.invoke('GetState')}
+ balance(){return this.c.invoke('GetBalance')}}
+async function refreshBalance(){try{const b=await netc.balance();if(typeof b==='number'){balance=b;update()}}catch(e){}}
+const entOf=(d,t0)=>{const sx=rand(W*.12,W*.88);return{id:d.id,sx,sy:-35,x:sx,y:-35,tx:W*.5+rand(-W*.16,W*.16),ty:H*.7,type:vis(d.kind),name:d.kind,val:d.reward,dur:(d.resolveMs-d.spawnMs)/1000,t0,age:0,res:null,seq:0}};
+const HND={
+ __offline(){offline=true;log('Connection lost. Reconnecting…',true);update()},
+ __reconnected(){offline=false;log('Reconnected. Syncing with the server…',true);syncState()},
+ RoundOpened(d){if(nonce>0&&d.nonce<=nonce)return;if(endInfo)finalize();nonce=d.nonce;round=nonce;phase='wait';waitEnd=performance.now()+d.bettingMs;entities=[];slots.forEach(s=>{s.placed=false;s.cashed=false;s.cashing=false});crashed=false;capEnd=false;endInfo=null;mult=1;kills=drones=missiles=heavy=0;fairLog[nonce]={hash:d.serverSeedHash,crash:null};$('fNonce').textContent='#'+String(nonce).padStart(4,'0');$('fHash').textContent=d.serverSeedHash;refreshBalance();log('Round #'+nonce+': place your bets.',true);update();slots.forEach(autoPlace)},
+ RoundStarted(d){if(d.nonce<nonce||(d.nonce===nonce&&phase==='running'))return;if(d.nonce>nonce){syncState();return}resTxt='';phase='running';roundT0=performance.now();elapsed=0;lastWhole=1;siren();log(slots.some(s=>s.placed)?'ROUND STARTED · your bet is live.':'ROUND STARTED · bets closed, watching.',true);update()},
+ ThreatSpawned(d){if(d.nonce<nonce)return;if(d.nonce>nonce){syncState();return}if(entities.some(x=>x.id===d.id))return;const dur=(d.resolveMs-d.spawnMs)/1000,e=entOf(d,performance.now());entities.push(e);log(d.kind.toUpperCase()+' · worth +'+d.reward.toFixed(2)+'×');fly(e.type,dur,(e.sx/W-.5)*2)},
+ ThreatResolved(d){if(d.nonce<nonce)return;const e=entities.find(x=>x.id===d.id);if(e){e.res=d.neutralized?'ok':'boom';e.mult=d.multiplier;e.seq=++seqN}},
+ RoundEnded(d){if(d.nonce<=lastFinalNonce)return;if(d.nonce>nonce){syncState();return}endInfo=d;tryFinalize()},
+ AutoCashedOut(d){if(d.nonce<nonce)return;const s=slots[d.slot|0];if(s&&s.placed&&!s.cashed){s.cashed=true;s.cashMult=d.multiplier;chime();refreshRes();log('AUTO CASH OUT '+LET[s.i]+' · '+cur(d.payout)+' at '+d.multiplier.toFixed(2)+'×',true);update()}},
+ BetSettled(d){const s=slots[d.slot|0];if(s&&d.nonce===nonce&&d.won&&!s.cashed){s.cashed=true;s.cashMult=d.multiplier;refreshRes()}refreshBalance();update()}};
+// ---- reconnect: ask the server for the authoritative state and rebuild the UI from it
+// Snapshot + event buffer: events that arrive while GetState is in flight are held and replayed AFTER the snapshot is applied
+// (the handlers are idempotent: duplicate spawns, stale nonces and already-finalised rounds are ignored), so nothing is lost or applied twice.
+async function syncState(){
+  if(syncInFlight){syncQueued=true;return}
+  syncInFlight=true;
+  try{
+    for(let attempt=0;attempt<5;attempt++){
+      syncQueued=false;evBuf=[];
+      let st;
+      try{st=await call(()=>netc.getState())}catch(e){log('Sync failed: '+(e&&e.message||e),true);break}
+      if(offline){await whenOnline();continue}                       // connection dropped again while waiting: take a fresh snapshot
+      if(st.nonce<nonce&&attempt<4){await new Promise(r=>setTimeout(r,200));continue} // older than what we already saw: ask again (bounded)
+      applyState(st);
+      const buf=evBuf;evBuf=[];buf.forEach(([n,d])=>{const f=HND[n];if(f)f(d)});
+      if(!syncQueued)break;
+    }
+  }finally{syncInFlight=false;evBuf=[]}
+}
+function applyState(st){
+ if(st.last&&st.last.nonce>lastFinalNonce){slots.forEach(s=>{s.placed=false;s.cashed=false});st.last.bets.forEach(b=>{const s=slots[b.slot];s.placed=true;s.stake=b.stake;s.cashed=b.won;s.cashMult=b.won?b.multiplier:1});endInfo=st.last;entities=[];finalize()}
+ nonce=st.nonce;round=nonce;fairLog[nonce]=fairLog[nonce]||{hash:st.serverSeedHash,crash:null};$('fNonce').textContent='#'+String(nonce).padStart(4,'0');$('fHash').textContent=st.serverSeedHash;
+ balance=st.balance;entities=[];endInfo=null;crashed=false;capEnd=false;kills=drones=missiles=heavy=0;
+ slots.forEach(s=>{s.placed=false;s.cashed=false;s.cashing=false;s.busy=false});
+ st.bets.forEach(b=>{const s=slots[b.slot];s.placed=true;s.stake=b.stake;s.cashed=b.state==='CashedOut';s.cashMult=b.cashOutMultiplier||1;SE[b.slot].bet.value=b.stake;if(b.autoCashAt)SE[b.slot].autoCash.value=b.autoCashAt});
+ if(st.phase==='active'){phase='running';roundT0=performance.now()-st.elapsedMs;elapsed=st.elapsedMs;mult=st.multiplier;lastWhole=Math.floor(mult);st.threats.filter(t=>!t.resolved).forEach(t=>entities.push(entOf(t,performance.now()-(st.elapsedMs-t.spawnMs))))}
+ else{phase='wait';waitEnd=performance.now()+st.bettingMsLeft;mult=1}
+ if(st.bets.length)refreshRes();update();log('Synced with the server · round #'+nonce+'.',true)} // keep the result text of a round that finished while we were offline
+const emit=(n,d)=>{if(syncInFlight&&n[0]!=='_'){evBuf.push([n,d]);return}const f=HND[n];if(f)f(d)};
+function visuals(){const now=performance.now(),due=entities.filter(e=>e.res&&now>=e.t0+e.dur*1000).sort((a,b)=>a.seq-b.seq);
+ for(const e of due){entities.splice(entities.indexOf(e),1);e.x=e.tx;e.y=e.ty;
+  if(e.res==='boom'){burst(e.x,e.y,'#ff6a4d',60);boomLoss(slots.some(s=>s.placed&&!s.cashed))}
+  else{mult=e.mult;kills++;e.type==='drone'?drones++:e.type==='missile'?missiles++:heavy++;boom(e.type==='heavy');burst(e.x,e.y,e.type==='heavy'?'#ffbc6e':'#52e9cb',e.type==='heavy'?36:18);floaters.push({t:'+'+e.val.toFixed(2)+'×',x:e.x,y:e.y,life:1});pop();const w=Math.floor(mult);if(w>lastWhole){lastWhole=w;if(slots.some(s=>s.placed&&!s.cashed))$('srLive').textContent='Multiplier '+w+' times'}}
+  update()}
+ if(due.length)tryFinalize()}
+function tryFinalize(){if(!endInfo||entities.some(e=>e.res))return;finalize()}
+function finalize(){const d=endInfo;if(!d)return;endInfo=null;lastFinalNonce=Math.max(lastFinalNonce,d.nonce);phase='wait';capEnd=d.endKind==='Cap';crashed=!capEnd;mult=d.finalMultiplier;entities=[];waitEnd=performance.now()+5000;
+ slots.forEach(s=>{if(s.placed&&capEnd&&!s.cashed){s.cashed=true;s.cashMult=mult}});
+ history.unshift({c:mult});history=history.slice(0,9);
+ $('history').innerHTML=history.map(h=>'<span>'+h.c.toFixed(2)+'×</span>').join('');
+ if(crashed)burst(W*.5,H*.78,'#ff865f',100);
+ fairLog[d.nonce]=Object.assign(fairLog[d.nonce]||{},{crash:d.finalMultiplier});$('vSeed').value=d.serverSeed;$('vClient').value=d.clientSeedCombined;$('vNonce').value=d.nonce;$('lastInfo').textContent='LAST ROUND #'+String(d.nonce).padStart(4,'0')+' · CRASH '+d.finalMultiplier.toFixed(2)+'× · SERVER SEED REVEALED';verify();
+ refreshRes();
+ log((capEnd?'MAX MULTIPLIER REACHED at ':'BASE DESTROYED at ')+mult.toFixed(2)+'×'+(resTxt?' · '+resTxt+'.':'.')+' Please place your bets.',true);
+ slots.forEach(s=>{s.placed=false;s.cashing=false});update()}
+const whenOnline=async()=>{await new Promise(r=>setTimeout(r,300));for(let i=0;i<200&&offline;i++)await new Promise(r=>setTimeout(r,100))};
+async function call(fn){for(let i=0;;i++){try{return await fn()}catch(e){if(i>=3)throw e;await whenOnline()}}} // retries reuse the SAME idempotency key (created once by the caller)
+function parseAuto(e){const t=String(e.autoCash.value||'').trim();if(t==='')return null;const n=Number(t);if(!(n>=1.05&&n<=100)){log('Auto cash out must be between 1.05× and 100×.',true);return false}return n}
+async function placeSlot(s){if(s.placed||s.busy||phase!=='wait')return false;const e=SE[s.i];
+ if(balance<MIN){log('Out of funds. Use RESET DEMO.',true);return false}
+ const v=r2(Number(e.bet.value));
+ if(!Number.isFinite(v)||v<MIN||v>MAX){log('Invalid bet '+LET[s.i]+'. Minimum '+cur(MIN)+', maximum '+cur(MAX)+'.',true);return false}
+ if(v>balance){log('Bet '+LET[s.i]+' exceeds your balance ('+cur(balance)+').',true);return false}
+ const ac=parseAuto(e);if(ac===false)return false;
+ s.busy=true;update();const k=uuid();let r;try{r=await call(()=>netc.placeBet(v,cSeed,k,s.i,ac))}catch(x){r={ok:false,error:'NETWORK'}}s.busy=false;
+ if(r.ok){s.placed=true;s.stake=v;s.cashed=false;balance-=v;e.bet.value=v;blip(520);refreshBalance();log('BET '+LET[s.i]+' PLACED · '+cur(v)+(ac?' · auto cash out at '+ac+'×':'')+'. Round starts automatically.',true)}else log('Bet '+LET[s.i]+' rejected: '+r.error,true);
+ update();return !!r.ok}
+async function autoPlace(s){const e=SE[s.i];if(!e.autoBet.checked||s.placed||phase!=='wait')return;
+ if(s.autoLimited&&s.autoLeft<=0){e.autoBet.checked=false;log('Auto bet '+LET[s.i]+' finished.',true);update();return}
+ const ok=await placeSlot(s);if(ok&&s.autoLimited)s.autoLeft--;if(!ok){e.autoBet.checked=false;log('Auto bet '+LET[s.i]+' stopped.',true)}update()}
+async function cash(s){if(s.cashing||!s.placed||s.cashed||mult<=1)return;s.cashing=true;update();const k=uuid();let r;try{r=await call(()=>netc.cashOut(k,nonce,s.i))}catch(e){r={ok:false,error:'NETWORK'}}s.cashing=false;
+ if(r.ok){s.cashed=true;s.cashMult=r.multiplier;chime();refreshRes();log('CASH OUT '+LET[s.i]+' CONFIRMED · '+cur(r.payout)+' returned.',true)}else log(r.error==='LOST'||r.error==='ROUND_ENDED'||r.error==='NO_BET'?'Too late: the round was already over.':'Cash out rejected: '+r.error,true);if(r.error==='NETWORK')syncState();update()}
+function toggleBet(i){const s=slots[i];if(phase==='running'){if(s.placed&&!s.cashed)cash(s);return}placeSlot(s)}
+slots.forEach(s=>{const e=SE[s.i];e.action.addEventListener('click',()=>toggleBet(s.i));
+ e.autoBet.addEventListener('change',()=>{const n=Number(e.autoRounds.value)||0;s.autoLimited=n>0;s.autoLeft=n;if(e.autoBet.checked)autoPlace(s);update()});
+ [e.autoCash,e.autoRounds].forEach(x=>x.addEventListener('input',update));
+ if(matchMedia('(min-width:901px)').matches)e.det.open=true});
+$('reset').addEventListener('click',e=>{if(e.detail)e.currentTarget.blur();if(LIVE)return;netc.bal=TOP;refreshBalance();history=[];$('history').innerHTML='<span>NO DATA YET</span>';log('Demo wallet reset.',true)});
+chips.forEach(b=>b.addEventListener('click',e=>{SE[+b.dataset.slot||0].bet.value=b.dataset.bet;if(e.detail)b.blur()}));
+document.addEventListener('keydown',e=>{if((e.code==='Space'||e.code==='Enter')&&!['INPUT','BUTTON','SUMMARY'].includes(document.activeElement.tagName)&&!e.repeat){e.preventDefault();toggleBet(0)}});
+$('vBtn').addEventListener('click',verify);
+cSeed='player-'+rhex(3);$('cseed').value=cSeed;$('cseed').addEventListener('input',e=>{cSeed=e.target.value.replace(/[^A-Za-z0-9_-]/g,'').slice(0,24)||'player'});
+// ---- sound (synthesized, no audio files)
+function ac(){if(!AC){try{AC=new(window.AudioContext||window.webkitAudioContext)();master=AC.createGain();master.gain.value=muted?0:.5;{const cp=AC.createDynamicsCompressor();master.connect(cp);cp.connect(AC.destination)}}catch(e){AC=null}}if(AC&&AC.state==='suspended')AC.resume();return AC}
+function env(g,t,d,v,p){const G=g.gain;if(p){G.setValueAtTime(v,t);G.exponentialRampToValueAtTime(.0001,t+d)}else{const a=Math.min(.08,d/4);G.setValueAtTime(.0001,t);G.exponentialRampToValueAtTime(v,t+a);G.setValueAtTime(v,Math.max(t+a,t+d-.12));G.exponentialRampToValueAtTime(.0001,t+d)}}
+function osc(type,f0,f1,t,d,v,D,p){const o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.setValueAtTime(f0,t);if(f1!==f0)o.frequency.exponentialRampToValueAtTime(f1,t+d);env(g,t,d,v,p);o.connect(g).connect(D);o.start(t);o.stop(t+d+.05);return o}
+function nse(f0,f1,t,d,v,D,type,q,p){if(!nb){nb=AC.createBuffer(1,AC.sampleRate*2,AC.sampleRate);const a=nb.getChannelData(0);for(let i=0;i<a.length;i++)a[i]=Math.random()*2-1}const s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain();s.buffer=nb;s.loop=true;f.type=type;f.Q.value=q;f.frequency.setValueAtTime(f0,t);f.frequency.exponentialRampToValueAtTime(f1,t+d);env(g,t,d,v,p);s.connect(f).connect(g).connect(D);s.start(t);s.stop(t+d+.05)}
+function siren(){if(!ac()||muted)return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain(),f=AC.createBiquadFilter();o.type='sawtooth';f.type='lowpass';f.frequency.value=1800;o.frequency.setValueAtTime(600,t);for(let k=0;k<4;k++)o.frequency.linearRampToValueAtTime(k%2?600:1000,t+.35*(k+1));env(g,t,1.4,.18);o.connect(f).connect(g).connect(master);o.start(t);o.stop(t+1.45)}
+function boom(big){if(!ac()||muted)return;const t=AC.currentTime,d=big?.9:.45;nse(big?2200:3500,big?120:300,t,d,big?.5:.35,master,'lowpass',1,true);osc('sine',big?110:160,40,t,d*.7,big?.7:.5,master,true)}
+function boomLoss(lost){if(!ac()||muted)return;const t=AC.currentTime,k=lost?1:.7,V=lost?1:.7; // BASE EXPLOSION. Phone speakers cannot play deep bass, so the blast has a sharp crack, loud mid-range body and a secondary blast; sub-bass is only the bottom layer.
+nse(7000,900,t,.28,.9*V,master,'highpass',.7,true);                       // crack (instant, bright)
+nse(2600,220,t,1.5*k,.85*V,master,'bandpass',.8,true);                    // mid-range blast body (audible on phones)
+nse(1400,90,t,2.3*k,.7*V,master,'lowpass',1,true);                        // rolling fireball
+osc('square',190,55,t,.9*k,.22*V,master,true);osc('sawtooth',330,70,t+.02,.7*k,.18*V,master,true); // mid thud (harmonics carry on small speakers)
+osc('sine',95,22,t,2*k,.8*V,master,true);                                  // sub-bass for real speakers
+nse(2200,180,t+.38,1.1*k,.6*V,master,'bandpass',.9,true);osc('sine',140,38,t+.38,.9*k,.45*V,master,true); // secondary blast
+osc('sawtooth',170,45,t+.3,1.3*k,.12*V,master,true);                       // structure collapse
+[.2,.5,.8,1.1,1.45,1.8].forEach(d=>{if(d<2*k)nse(5200,500,t+d,.2,.14*V,master,'bandpass',2,true)}); // debris
+if(lost)osc('sawtooth',520,70,t+.05,1.5,.2,master,true)}                  // descending defeat alarm, only for a lost bet
+function fly(type,d,pan){if(!ac()||muted)return;const t=AC.currentTime;let D=master;if(AC.createStereoPanner){const p=AC.createStereoPanner();p.pan.value=Math.max(-1,Math.min(1,pan));p.connect(master);D=p}
+if(type==='drone'){const o=osc('sawtooth',140,110,t,d,.035,D),l=AC.createOscillator(),lg=AC.createGain();l.frequency.value=24;lg.gain.value=22;l.connect(lg).connect(o.frequency);l.start(t);l.stop(t+d+.05)}
+else if(type==='missile'){nse(500,2200,t,d,.12,D,'bandpass',3);osc('sine',1100,600,t,d,.025,D)}
+else{nse(220,90,t,d,.28,D,'lowpass',1);osc('sine',60,45,t,d,.12,D)}}
+function blip(f){if(!ac()||muted)return;osc('square',f,f,AC.currentTime,.06,.06,master,true)}
+function tick(){if(!ac()||muted)return;osc('sine',700,700,AC.currentTime,.09,.12,master,true)}
+function chime(){if(!ac()||muted)return;const t=AC.currentTime;osc('sine',880,880,t,.18,.15,master,true);osc('sine',1320,1320,t+.1,.3,.15,master,true)}
+$('mute').addEventListener('click',e=>{muted=!muted;if(master)master.gain.value=muted?0:.5;e.currentTarget.textContent=muted?'🔇 SOUND OFF':'🔊 SOUND ON';e.currentTarget.setAttribute('aria-pressed',String(muted));if(!muted)ac()});
+['pointerdown','keydown'].forEach(ev=>document.addEventListener(ev,()=>ac(),{once:true}));
+
+
+document.addEventListener('visibilitychange',()=>{if(document.hidden)hiddenAt=Date.now();else if(netc&&netc.getState&&Date.now()-hiddenAt>3000)syncState()});
+$('mode').textContent=LIVE?'LIVE SERVER mode · outcomes are decided on the server':'DEMO mode · an in-browser mock server stands in for the real one (not secure)';
+(async()=>{try{if(LIVE){netc=new Hub(emit,Q.get('token')||'');await netc.connect();await syncState()}else{netc=new Mock(emit,LAT);netc.start()}}catch(e){log('Connection failed: '+(e&&e.message||e),true)}})();
+function draw(dt){frame+=dt;const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#091f30');g.addColorStop(.7,'#0c2634');g.addColorStop(1,'#09121c');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);ctx.strokeStyle='#2b67701d';ctx.lineWidth=1;let spacing=43;for(let x=(reduce.matches?0:frame*7)%spacing;x<W;x+=spacing){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}for(let y=0;y<H;y+=spacing){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}stars.forEach(s=>{ctx.globalAlpha=s.a*(reduce.matches?1:.7+.3*Math.sin(frame*2+s.x));ctx.fillStyle='#a4e9eb';ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,7);ctx.fill()});ctx.globalAlpha=1;const horizon=H*.77;ctx.fillStyle='#102b35';ctx.beginPath();ctx.moveTo(0,horizon);for(let x=0;x<=W;x+=30)ctx.lineTo(x,horizon-22-Math.sin(x*.015)*14-Math.sin(x*.039)*7);ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.fill();ctx.fillStyle='#0b1823';ctx.fillRect(0,H*.87,W,H*.13);ctx.strokeStyle='#236c70';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,H*.87);ctx.lineTo(W,H*.87);ctx.stroke();const bx=W*.5,by=H*.81;ctx.fillStyle=crashed?'#662e2b':'#153b47';ctx.beginPath();ctx.moveTo(bx-65,by+33);ctx.lineTo(bx-45,by-2);ctx.lineTo(bx-24,by-2);ctx.lineTo(bx-17,by-33);ctx.lineTo(bx+17,by-33);ctx.lineTo(bx+24,by-2);ctx.lineTo(bx+45,by-2);ctx.lineTo(bx+65,by+33);ctx.closePath();ctx.fill();ctx.strokeStyle=crashed?'#ff8469':'#53bfb7';ctx.stroke();ctx.fillStyle='#50e8c4';if(!crashed)ctx.fillRect(bx-11,by-22,22,5);ctx.strokeStyle='#4ce6c15a';ctx.lineWidth=1;for(let r=75;r<=230;r+=75){ctx.beginPath();ctx.ellipse(bx,by,r,r*.32,0,Math.PI,Math.PI*2);ctx.stroke()}ctx.save();ctx.setLineDash([10,8]);ctx.strokeStyle='rgba(71,233,196,.4)';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(0,H*.7);ctx.lineTo(W,H*.7);ctx.stroke();ctx.restore();ctx.fillStyle='rgba(71,233,196,.75)';ctx.font='11px monospace';ctx.fillText('RESOLUTION LINE',12,H*.7-6);for(let i=entities.length-1;i>=0;i--){const e=entities[i];e.age=(performance.now()-e.t0)/1000;const q=Math.min(1,e.age/e.dur);e.x=e.sx+(e.tx-e.sx)*q;e.y=e.sy+(e.ty-e.sy)*q;const dx=e.tx-e.sx,dy=e.ty-e.sy;ctx.save();ctx.translate(e.x,e.y);ctx.rotate(Math.atan2(dy,dx)+Math.PI/2);ctx.shadowBlur=reduce.matches?0:20;ctx.shadowColor=e.type==='heavy'?'#ff9a62':'#f5b968';ctx.fillStyle=e.type==='heavy'?'#ff9c65':e.type==='missile'?'#f2cf92':'#c1d7df';ctx.beginPath();if(e.type==='drone'){ctx.moveTo(0,-12);ctx.lineTo(8,5);ctx.lineTo(23,11);ctx.lineTo(18,16);ctx.lineTo(0,9);ctx.lineTo(-18,16);ctx.lineTo(-23,11);ctx.lineTo(-8,5)}else{let w=e.type==='heavy'?12:6,h=e.type==='heavy'?29:18;ctx.moveTo(0,-h);ctx.lineTo(w,h*.55);ctx.lineTo(0,h);ctx.lineTo(-w,h*.55)}ctx.closePath();ctx.fill();ctx.restore();ctx.strokeStyle='#56e9c68c';ctx.beginPath();ctx.moveTo(bx,by-28);ctx.lineTo(e.x,e.y);ctx.stroke();ctx.fillStyle='#e8fbff';ctx.font='bold 12px monospace';ctx.textAlign='center';ctx.fillText('+'+e.val.toFixed(2)+'×',e.x,e.y-30);ctx.textAlign='left'}for(let i=particles.length-1;i>=0;i--){let p=particles[i];p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=75*dt;if(p.life<=0){particles.splice(i,1);continue}ctx.globalAlpha=Math.min(1,p.life*1.6);ctx.fillStyle=p.color;ctx.beginPath();ctx.arc(p.x,p.y,Math.max(.5,p.life*3.5),0,7);ctx.fill()}ctx.globalAlpha=1;for(let i=floaters.length-1;i>=0;i--){const f=floaters[i];f.life-=dt*.9;f.y-=28*dt;if(f.life<=0){floaters.splice(i,1);continue}ctx.globalAlpha=f.life;ctx.fillStyle='#7dffdc';ctx.font='bold 17px monospace';ctx.textAlign='center';ctx.fillText(f.t,f.x,f.y);ctx.textAlign='left'}ctx.globalAlpha=1;ctx.fillStyle='#4de8c6';ctx.font='11px monospace';ctx.fillText('SECTOR 07 / DEFENSE GRID',17,H-17);ctx.fillStyle='#829eac';ctx.fillText('THREAT X // V20',Math.max(0,W-120),H-17)}function loop(ts){const dt=Math.min(.05,(ts-lastTime)/1000||0);lastTime=ts;
+if(phase==='running')elapsed=ts-roundT0;else{waitLeft=Math.max(0,waitEnd-ts);const sc=Math.ceil(waitLeft/1000);if(sc!==lastTick){lastTick=sc;if(sc>0&&sc<=3)tick()}}
+visuals();update();
+draw(dt);requestAnimationFrame(loop)}update();requestAnimationFrame(loop)})();
+</script></body></html>
